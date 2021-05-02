@@ -70,4 +70,25 @@ public class testMaximum {
         Assert.assertThat(max, CoreMatchers.equalTo(9.01f));
     }
 
+    /**
+     * UC3: testcases..
+     */
+    @Test
+    public void firstStringMaxReturnFirst() {
+        String max = MaximumValue.findMax("Girl","Boy","Animal");
+        Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
+    }
+
+    @Test
+    public void secondStringMaxReturnSecond() {
+        String max = MaximumValue.findMax("Boy","Girl","Animal");
+        Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
+    }
+
+    @Test
+    public void thirdStringMaxReturnThird() {
+        String max = MaximumValue.findMax("Boy","Animal","Girl");
+        Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
+    }
+
 }
