@@ -116,4 +116,18 @@ public class testMaximum {
         String max = new MaximumValue<String>("Boy", "Girl", "Animal").findAnyMax();
         Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
     }
+
+    /**
+     * find max more than 3 variables in parameters
+     */
+    @Test
+    public void IntegerMaxReturnThirdMultiParameter() {
+        Integer max = MaximumValue.findAnyMax(5,3,2,6,7,1,9);
+        Assert.assertThat(max, CoreMatchers.equalTo(9));
+    }
+    @Test
+    public void FloatMaxReturnThirdMultiParameter() {
+        Float max = MaximumValue.findAnyMax(1.0f,5.0f,6.0f,3.0f,7.0f);
+        Assert.assertThat(max, CoreMatchers.equalTo(7.0f));
+    }
 }

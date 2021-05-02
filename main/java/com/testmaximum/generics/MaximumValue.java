@@ -1,6 +1,7 @@
 package com.testmaximum.generics;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MaximumValue<T extends Comparable<T>> {
     T num1;
@@ -72,6 +73,14 @@ public class MaximumValue<T extends Comparable<T>> {
 
     public T findAnyMax() {
         return MaximumValue.findAnyMax(num1, num2, num3);
+    }
+
+    /**
+     * UC4: method to take more than three parameters
+     */
+    public static <T extends Comparable<T>> T findAnyMax(T... elements) {
+        List<T> list = (List<T>) Arrays.asList(elements).stream().sorted().collect(Collectors.toList());
+        return list.get(elements.length - 1);
     }
 
     /**
