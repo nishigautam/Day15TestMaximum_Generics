@@ -1,5 +1,6 @@
 package com.testmaximum.generics;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -47,4 +48,26 @@ public class testMaximum {
         Integer max = t.findMax(2,3,8);
         Assert.assertSame(8, max);
     }
+
+    /**
+     * UC2..testcases
+     */
+    @Test
+    public void firstFloatMaxValueReturnFirst() {
+        Float max = MaximumValue.findMax(9.01f, 6.01f, 3.01f);
+        Assert.assertThat(max, CoreMatchers.equalTo(9.01f));
+    }
+
+    @Test
+    public void secondFloatMaxValueReturnSecond() {
+        Float max = MaximumValue.findMax(3.01f, 9.01f, 6.01f);
+        Assert.assertThat(max, CoreMatchers.equalTo(9.01f));
+    }
+
+    @Test
+    public void thirdFloatMaxValueReturnThird() {
+        Float max = MaximumValue.findMax(6.01f, 3.01f, 9.01f);
+        Assert.assertThat(max, CoreMatchers.equalTo(9.01f));
+    }
+
 }
