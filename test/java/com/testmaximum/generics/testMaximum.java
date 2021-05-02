@@ -91,4 +91,22 @@ public class testMaximum {
         Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
     }
 
+    /**
+     * After refactor the code : testcases
+     */
+    @Test
+    public void ReturnMaxFloat() {
+        Float max = MaximumValue.findAnyMax(9.01f, 6.01f, 3.01f);
+        Assert.assertThat(max, CoreMatchers.equalTo(9.01f));
+    }
+    @Test
+    public void ReturnMaxString() {
+        String max = MaximumValue.findAnyMax("Boy","Girl","Animal");
+        Assert.assertThat(max, CoreMatchers.equalTo("Girl"));
+    }
+    @Test
+    public void ReturnMaxInteger() {
+        Integer max = MaximumValue.findAnyMax(1, 2, 3);
+        Assert.assertThat(max, CoreMatchers.equalTo(3));
+    }
 }
